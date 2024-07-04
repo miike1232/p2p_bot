@@ -1,0 +1,39 @@
+#
+# Custom .gitignore
+#
+
+.idea/
+.vscode/
+media/
+compose/
+import/
+telegram_sessions/
+*.sh
+*.sql
+celerybeat-*
+changes.patch
+
+#
+# GitHub's .gitignore template for python
+#
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+#
+# Environments
+#
+*.env
+.venv
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
