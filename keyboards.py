@@ -8,7 +8,7 @@ from database import check_pairs, get_broken_pairs
 
 main = ReplyKeyboardMarkup(
     keyboard=[
-        [KeyboardButton(text='Все связки')],
+        [KeyboardButton(text='Все связки'), KeyboardButton(text='Связки > 0')],
         [KeyboardButton(text='Добавить связку'), KeyboardButton(text='Поломанные связки')],
     ],
     resize_keyboard=True,
@@ -34,7 +34,7 @@ def get_unbroken_pairs_keyboard():
 def get_positive_pairs_keyboard():
     keyboard_builder = InlineKeyboardBuilder()
     for p in check_pairs(session, default_deposit):
-        if p['value'] > 0:
+        if float(p['value']) > 0:
             keyboard_builder.button(
                 text=f"{p['name']} [{p['value']}%]",
                 callback_data=p['name']

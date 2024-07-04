@@ -34,6 +34,16 @@ async def unbroken_pairs(message: Message):
     await bot.delete_message(chat_id=message.chat.id, message_id=wait_message.message_id)
 
 
+@router.message(F.text == 'Связки > 0')
+async def positive_pairs(message: Message):
+    wait_message = await message.answer("Подождите...")
+    await message.answer(
+        text="Связки > 0:",
+        reply_markup=kb.get_positive_pairs_keyboard()
+    )
+    await bot.delete_message(chat_id=message.chat.id, message_id=wait_message.message_id)
+
+
 @router.message(F.text == 'Поломанные связки')
 async def broken_pairs(message: Message):
     wait_message = await message.answer("Подождите...")
