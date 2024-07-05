@@ -6,6 +6,8 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 from main import session, default_deposit
 from database import check_pairs, get_broken_pairs
 
+
+
 main = ReplyKeyboardMarkup(
     keyboard=[
         [KeyboardButton(text='Все связки'), KeyboardButton(text='Связки > 0')],
